@@ -87,9 +87,7 @@ fn ask_for_edge() -> EdgeOption {
 
     // Store the user input
     let mut input = String::new();
-    stdin()
-        .read_line(&mut input)
-        .expect("Error reading from stdin");
+    stdin().read_line(&mut input).unwrap();
 
     // Check if the user entered an edge or done
     match input.as_str() {
