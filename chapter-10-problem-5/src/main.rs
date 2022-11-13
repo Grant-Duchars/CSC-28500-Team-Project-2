@@ -13,7 +13,8 @@ fn main() {
     // Get user input and convert to integer
     let mut length = String::new();
     stdin().read_line(&mut length).unwrap();
-    length.pop();
+    let len = length.trim_end_matches(&['\r', '\n']).len();
+    length.truncate(len);
     let length = length.parse::<usize>().unwrap();
 
     // Run Gray code recursion function

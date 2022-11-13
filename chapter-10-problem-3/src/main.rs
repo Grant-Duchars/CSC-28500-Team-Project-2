@@ -88,12 +88,14 @@ fn ask_for_edge() -> EdgeOption {
     // Store the user input
     let mut input = String::new();
     stdin().read_line(&mut input).unwrap();
+    let len = input.trim_end_matches(&['\r', '\n']).len();
+    input.truncate(len);
 
     // Check if the user entered an edge or done
     match input.as_str() {
-        "done\n" => return EdgeOption::Done,
-        "Done\n" => return EdgeOption::Done,
-        "DONE\n" => return EdgeOption::Done,
+        "done" => return EdgeOption::Done,
+        "Done" => return EdgeOption::Done,
+        "DONE" => return EdgeOption::Done,
         _ => {
             let mut input = input.split(',');
             return EdgeOption::Edge((
@@ -110,11 +112,7 @@ fn ask_for_edge() -> EdgeOption {
                     }
                 },
                 match input.next() {
-                    Some(str) => {
-                        let mut str = str.to_string();
-                        str.pop();
-                        str
-                    }
+                    Some(str) => str.to_string(),
                     None => {
                         execute!(
                             stdout,
