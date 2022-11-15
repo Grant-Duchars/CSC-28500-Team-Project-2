@@ -1,3 +1,9 @@
+'''
+Morgan Purcell
+November 14th, 2022
+Program to find the number of paths of length N between two vertices
+'''
+
 #initialize the adjaceny matrix for the undirected graph
 undir_graph = [[0,1,0,1,0,0],
                [1,0,1,0,1,0],
