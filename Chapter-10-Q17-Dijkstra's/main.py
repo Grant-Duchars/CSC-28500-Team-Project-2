@@ -1,6 +1,7 @@
 '''
-Program to find the best path between two nodes on a graph using Dijkstra's search algorithm
+Morgan Purcell
 November 14th, 2022
+Program to find the best path between two nodes on a graph using Dijkstra's search algorithm
 '''
 
 #import the math library
