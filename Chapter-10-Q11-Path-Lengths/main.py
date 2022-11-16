@@ -5,7 +5,7 @@ Program to find the number of paths of length N between two vertices
 '''
 
 #initialize the adjaceny matrix for the undirected graph
-undir_graph = [[0,1,0,1,0,0],
+undir_graph = [[0,1,0,0,0,0],
                [1,0,1,0,1,0],
                [0,1,0,1,1,0],
                [0,0,1,0,1,0],
@@ -90,11 +90,6 @@ def undirPath(currNode, endNode, currPath):
     
 
 #define main
-'''
-Program to find total paths of length N between two vertices given an adjacency matrix 
-November 14th, 2022
-'''
-
 def main():
     #declare the global variable N
     global N
@@ -104,6 +99,9 @@ def main():
     if graph != "1" and graph != "2":
         print("Invalid graph entry\n")
         main()
+
+    #print a message informing the user of the graph nodes
+    print("\nThe graph includes the nodes 0 1 2 3 4 5\n")
 
     #prompt the user for the path length, start node, and end node
     N = int(input("Enter the path length: "))
@@ -120,7 +118,7 @@ def main():
         if startNode > len(dir_graph)-1 or endNode > len(dir_graph)-1:
             print("Invalid node entered\n")
             main()
-        dirPath(startNode,endNode, [startNode])
+        dirPath(startNode, endNode, [startNode])
         
     elif graph == "2":
         if startNode > len(undir_graph)-1 or endNode > len(undir_graph)-1:
