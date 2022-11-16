@@ -55,7 +55,7 @@ def findPath(startNode, endNode):
     #initialize the previous node(value) for each node to empty as a placeholder
     prev_node = dict.fromkeys(prev_node, "")
 
-    #declare a dictionary to hold nodes that have been visited
+    #declare a list to hold nodes that have been visited
     visited = []
 
     #while there are nodes in the pq dict
@@ -117,3 +117,4 @@ def main():
 #call the main function
 if __name__ == '__main__':
     main()
+
